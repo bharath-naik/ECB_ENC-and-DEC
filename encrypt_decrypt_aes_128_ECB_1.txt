@@ -1,0 +1,59 @@
+Microsoft Windows [Version 10.0.17763.864]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\3427340vad>python
+Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> hello = {"0":145,"1":231,"2":215,"3":56,"4":47,"5":177,"6":15,"7":234,"8":89,"9":245,"10":167,"11":174,"12":246,"13":140,"14":223,"15":88}
+>>> hello
+{'0': 145, '1': 231, '2': 215, '3': 56, '4': 47, '5': 177, '6': 15, '7': 234, '8': 89, '9': 245, '10': 167, '11': 174, '12': 246, '13': 140, '14': 223, '15': 88}
+>>> list(hello.values()/0
+...
+...
+...
+KeyboardInterrupt
+>>> list(hello.values())
+[145, 231, 215, 56, 47, 177, 15, 234, 89, 245, 167, 174, 246, 140, 223, 88]
+>>> lisk = list(hello.values())
+>>> lisk
+[145, 231, 215, 56, 47, 177, 15, 234, 89, 245, 167, 174, 246, 140, 223, 88]
+>>> lisk.bytes()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'bytes'
+>>> lisk.bytes
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'bytes'
+>>> arra = bytearray(lisk)
+>>> arra
+bytearray(b'\x91\xe7\xd78/\xb1\x0f\xeaY\xf5\xa7\xae\xf6\x8c\xdfX')
+>>> tpe(arra)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'tpe' is not defined
+>>> type(arra)
+<class 'bytearray'>
+>>> arra = byte(lisk)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'byte' is not defined
+>>> arra = bytes(lisk)
+>>> arra
+b'\x91\xe7\xd78/\xb1\x0f\xeaY\xf5\xa7\xae\xf6\x8c\xdfX'
+>>> type(arra)
+<class 'bytes'>
+>>> from Cryptodome.Cipher import AES
+>>> import Crypto.Random
+>>> key = bytes.fromhex('082ea16628d924b2765ba2496d8bd125')
+>>> key
+b'\x08.\xa1f(\xd9$\xb2v[\xa2Im\x8b\xd1%'
+>>> cipher = AES.new(key, AES.MODE_ECB)
+>>> plaintext = cipher.decrypt(arra)
+>>> plaintext
+b'\xc6\xeeH-\x9a\x1e\xff\n\xf3\xfe\x1f\xa9\xe8\\ax'
+>>> [plaintext]
+[b'\xc6\xeeH-\x9a\x1e\xff\n\xf3\xfe\x1f\xa9\xe8\\ax']
+>>> list(plaintext)
+[198, 238, 72, 45, 154, 30, 255, 10, 243, 254, 31, 169, 232, 92, 97, 120]
+>>>

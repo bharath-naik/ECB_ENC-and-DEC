@@ -1,0 +1,40 @@
+C:\Users\3427340vad>python
+Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import Crypto.Random
+>>> rb=Crypto.Random.get_random_bytes(16)
+>>> rb
+b'\xba\x9a\xb9v3\x19#r\x01\x9aq\x82\x1dik\xa6'
+>>> rb.hex()
+'ba9ab97633192372019a71821d696ba6'
+>>> from Cryptodome.Cipher import AES
+>>> key = bytes.fromhex('082ea16628d924b2765ba2496d8bd125')
+>>> key
+b'\x08.\xa1f(\xd9$\xb2v[\xa2Im\x8b\xd1%'
+>>> cipher = AES.new(key, AES.MODE_ECB)
+>>> ciphertext = cipher.encrypt(rb)
+>>> ciphertext
+b'0v\xea\x8a\xf3GS\xce\x8f\xd6dE\xaa \xabM'
+>>> ciphertext.hex()
+'3076ea8af34753ce8fd66445aa20ab4d'
+>>> bytes(rb)
+b'\xba\x9a\xb9v3\x19#r\x01\x9aq\x82\x1dik\xa6'
+>>> print(list(rb))
+[186, 154, 185, 118, 51, 25, 35, 114, 1, 154, 113, 130, 29, 105, 107, 166]
+>>> plaintext = cipher.decrypt(ciphertext)
+>>> plainttext
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'plainttext' is not defined
+>>> plaintext
+b'\xba\x9a\xb9v3\x19#r\x01\x9aq\x82\x1dik\xa6'
+>>> print(list(plaintext))
+[186, 154, 185, 118, 51, 25, 35, 114, 1, 154, 113, 130, 29, 105, 107, 166]
+>>> one = [0xb]
+>>> one
+[11]
+>>> numarray = [80, 66, 67, 86, 53, 49, 46, 48, 123, 175, 13]
+>>> hex_array = [hex(x) for x in numarray]
+>>> hex_array
+['0x50', '0x42', '0x43', '0x56', '0x35', '0x31', '0x2e', '0x30', '0x7b', '0xaf', '0xd']
+>>>
